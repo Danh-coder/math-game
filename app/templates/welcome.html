@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Welcome, {{ user.username }}!</h3>
+                </div>
+                <div class="card-body text-center">
+                    <h4>Your highest score: {{ user.highest_score }}</h4>
+                    <a href="{{ url_for('main.game_page') }}" class="btn btn-success btn-lg mt-3">Start Game</a>
+                    
+                    <h4 class="mt-4">Today's Leaderboard</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if leaderboard %}
+                                {% for entry in leaderboard %}
+                                <tr {% if entry[0] == user.username %}class="table-primary"{% endif %}>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ entry[0] }}</td>
+                                    <td>{{ entry[1] }}</td>
+                                </tr>
+                                {% endfor %}
+                            {% else %}
+                            <tr>
+                                <td colspan="3" class="text-center">No games played today</td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

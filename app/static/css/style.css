@@ -1,0 +1,57 @@
+/* General Styles */
+body {
+  background-color: #e9ecef; /* Light background for better contrast */
+  font-family: 'Arial', sans-serif; /* Clean font */
+}
+
+.card {
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.btn {
+  border-radius: 5px; /* Rounded button corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  padding: 12px 20px; /* Increased padding for touch targets */
+}
+
+.btn-success:hover, .btn-danger:hover {
+  opacity: 0.8; /* Slight opacity change on hover */
+}
+
+/* Progress Bar */
+.progress {
+  height: 20px; /* Thicker progress bar */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card {
+      margin: 0; /* Remove margin for cards */
+  }
+
+  .btn {
+      width: 100%; /* Full-width buttons on mobile */
+      max-width: fit-content;
+      margin: 5px 0; /* Space between buttons */
+      font-size: 18px; /* Increase font size for touch targets */
+  }
+
+  h3, h4, h2 {
+      font-size: 1.5rem; /* Increase heading sizes */
+  }
+
+  table {
+      font-size: 14px; /* Adjust table font size */
+  }
+
+  /* Spinner */
+  .spinner-border {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999; /* Ensure spinner is on top */
+  }
+}
