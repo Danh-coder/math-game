@@ -47,6 +47,13 @@ To set up the Math Challenge Game locally, follow these steps:
    pip install -r requirements.txt
    ```
 
+4. **Create a .env file**:
+- Create a file named .env in the root directory of your project.
+- Add your PostgreSQL connection string:
+   ```bash
+   DATABASE_URL=postgresql://username:password@localhost/dbname
+   ```
+
 4. **Run the application**:
    ```bash
    python app.py  # Adjust according to your main file
